@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ladco Steel | Industria Metalmecánica</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -348,13 +349,15 @@
                                     </svg>
                                     <p class="mb-2 text-sm text-gray-500 "><span class="font-semibold">Seleccione
                                         </span> o arrastre sus archivos PDF a este lugar.</p>
-                                        <span id="file-info" class="mt-2 text-sm text-gray-500"></span>
+                                    <span id="file-info" class="mt-2 text-sm text-gray-500"></span>
                                 </div>
                                 <input id="dropzone-file" name="archivos[]" accept="application/pdf" type="file"
                                     class="hidden" multiple onchange="showFileCount(this)" />
                             </label>
                         </div>
-                        
+                        <div class="g-recaptcha" data-sitekey="6Lc7UEEpAAAAAK227XJtZttIxzWcXuVBIs_oripI"></div>
+
+
                         <button type="submit"
                             class="mt-5 text-white bg-amber-300 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Enviar</button>
                     </form>
@@ -471,6 +474,11 @@
         </div>
     </footer>
     <!--JS Alerta-->
+    <script defer>
+        function onSubmit(token) {
+            document.getElementById("demo-form").submit();
+        }
+    </script>
     <script defer>
         document.addEventListener("DOMContentLoaded", function () {
             var urlParams = new URLSearchParams(window.location.search);
