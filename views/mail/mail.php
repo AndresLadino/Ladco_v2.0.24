@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Configurar el envío de correo con múltiples archivos adjuntos
         $resend->emails->send([
-            'from' => 'Acme <onboarding@resend.dev>',
+            'from' => 'Ladco Steel S.A.S <no-reply@ladcosteel.com.co>',
             'to' => ['theuhmc@gmail.com'],
             'subject' => 'Nos han contactado desde la página, ¡Revisame! 😀',
             'text' => 'Nombre: ' . $nombre . "\nCorreo electrónico: " . $correoCliente . "\nTeléfono: " . $telefono . "\nMensaje: " . $mensaje,
