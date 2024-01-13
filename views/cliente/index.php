@@ -36,7 +36,7 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
+                    <a href="https://ladcosteel.com.co" class="flex ml-2 md:mr-24">
                         <img src="../../src/image/logo.png" class="h-13 mr-3" alt="Ladco Steel Logo" />
                     </a>
                 </div>
@@ -116,7 +116,7 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
                     </ul>
                 </li>
                 <li>
-                    <a href="cliente/index.php" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-slate-800 dark:hover:bg-gray-700 group">
+                    <a href="" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-slate-800 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                             <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                         </svg>
@@ -148,24 +148,24 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
     </aside>
     <div class="mt-12 pt-12 sm:ml-64">
         <div class="bg-stone-100 h-screen">
-            <!-- Alerta
-        <div class="absolute top-20 right-0 m-4">
-            <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md transition-opacity"
-                role="alert" id="alert">
-                <div class="flex">
-                    <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20">
-                            <path
-                                d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
-                        </svg></div>
-                    <div>
-                        <p class="font-bold">¡Listo!</p>
-                        <p class="text-sm">{{ session('success') }}</p>
+            <!-- Coloca este código en el lugar donde quieras mostrar la alerta -->
+            <div class="absolute top-20 right-0 m-4">
+                <?php if (isset($_SESSION['success'])) : ?>
+                    <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md transition-opacity" role="alert" id="alert">
+                        <div class="flex">
+                            <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                                </svg></div>
+                            <div>
+                                <p class="font-bold">¡Listo!</p>
+                                <p class="text-sm"><?= $_SESSION['success']; ?></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <!-- Limpiar la variable de sesión después de mostrar la alerta -->
+                    <?php unset($_SESSION['success']); ?>
+                <?php endif; ?>
             </div>
-        </div>
--->
             <div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5">
                 <div class="w-full mb-1">
                     <div class="mb-4">
@@ -178,7 +178,7 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
                     </div>
                     <div class="sm:flex">
                         <div class="flex items-center ml-auto space-x-2 sm:space-x-3"><!--data-modal-toggle="add-user-modal"-->
-                            <a href="cliente/create">
+                            <a href="create.php">
                                 <button class="relative inline-flex items-center justify-center w-2/2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-green-700 to-green-500 group-hover:from-green-700 group-hover:to-green-500 hover:text-white" type="button">
                                     <span class="relative flex items-center px-5 w-full py-2.5 transition-all ease-in duration-75 bg-green-500 text-white dark:bg-gray-900  group-hover:bg-opacity-0">
                                         <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -240,75 +240,69 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">';
-
+                                    $i = 1; // Inicializa un contador
                                     while ($fila = $resultado->fetch_assoc()) {
-
                                         echo '
-                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <td class="text-base pl-4 font-semibold text-gray-900 dark:text-white" hidden>
-                                        ' . $fila['id'] . '
-                                        </td>
-                                        <td class="text-base pl-4 font-semibold text-gray-900 dark:text-white">
-                                        ' . $fila['nombre'] . '
-                                        </td>
-                                        <td class="text-base font-semibold text-gray-900 dark:text-white">
-                                        ' . $fila['apellido'] . '
-                                        </td>
-                                        <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        ' . $fila['telefono'] . '
-                                        </td>
-                                        <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        ' . $fila['correo'] . '
-                                        </td>
-                                        <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        ' . $fila['empresa'] . '
-                                        </td>
-                                        <td class="p-4 space-x-2 whitespace-nowrap">
-
-                                            <button id="dropdownDefaultButton-{{ $cliente->id }}" data-dropdown-toggle="dropdown-{{ $cliente->id }}" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white hover:text-white dark:hover-text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400" type="button">
-                                                <span class="relative flex items-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                                                    Acciones
-                                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <!-- Dropdown menu -->
-                                            <div id="dropdown-{{ $cliente->id }}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700">
-                                                <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton-{{ $cliente->id }}">
-                                                    <li>
-                                                        <a href="">
-                                                            <button class="relative inline-flex items-center justify-center w-full  overflow-hidden text-sm font-medium text-gray-900  group bg-gradient-to-br from-amber-600 to-amber-300 group-hover:from-amber-600 group-hover:to-amber-300 hover:text-white  dark:focus:ring-red-400" type="button">
-                                                                <span class="relative flex items-center px-5 w-full py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900  group-hover:bg-opacity-0">
-                                                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
-                                                                        </path>
-                                                                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
-                                                                    </svg> Editar
-                                                                </span>
-                                                            </button>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <button data-cliente-id="{{ $cliente->id }}" data-modal-toggle="delete-user-modal" class="relative inline-flex items-center justify-center w-full overflow-hidden text-sm font-medium text-gray-900 rounded-b-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:focus:ring-red-400" type="button">
-
+                                            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                                                <td class="text-base pl-4 font-semibold text-gray-900 dark:text-white" hidden>
+                                                    ' . $fila['id'] . '
+                                                </td>
+                                                <td class="text-base pl-4 font-semibold text-gray-900 dark:text-white">
+                                                    ' . $fila['nombre'] . '
+                                                </td>
+                                                <td class="text-base font-semibold text-gray-900 dark:text-white">
+                                                    ' . $fila['apellido'] . '
+                                                </td>
+                                                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    ' . $fila['telefono'] . '
+                                                </td>
+                                                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    ' . $fila['correo'] . '
+                                                </td>
+                                                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    ' . $fila['empresa'] . '
+                                                </td>
+                                                <td class="p-4 space-x-2 whitespace-nowrap">
+                                                    <button id="dropdownDefaultButton-' . $i . '" data-dropdown-toggle="dropdown-' . $i . '" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white hover:text-white dark:hover-text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400" type="button">
+                                                        <span class="relative flex items-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                                            Acciones
+                                                            <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+                                                    <!-- Dropdown menu -->
+                                                    <div id="dropdown-' . $i . '" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700">
+                                                        <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton-' . $i . '">
+                                                            <li>
+                                                                <a href="edit.php?id=' . $fila['id'] . '">
+                                                                    <button class="relative inline-flex items-center justify-center w-full overflow-hidden text-sm font-medium text-gray-900  group bg-gradient-to-br from-amber-600 to-amber-300 group-hover:from-amber-600 group-hover:to-amber-300 hover:text-white  dark:focus:ring-red-400" type="button">
+                                                                        <span class="relative flex items-center px-5 w-full py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900  group-hover:bg-opacity-0">
+                                                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
+                                                                                </path>
+                                                                                <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010-2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
+                                                                            </svg> Editar
+                                                                        </span>
+                                                                    </button>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                            <button data-client-id="' . $fila['id'] . '" data-modal-toggle="delete-user-modal" class="delete-button relative inline-flex items-center justify-center w-full overflow-hidden text-sm font-medium text-gray-900 rounded-b-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:focus:ring-red-400" type="button">
                                                             <span class="relative flex items-center px-5 w-full py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900  group-hover:bg-opacity-0">
                                                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                                     <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
                                                                 </svg> Eliminar
                                                             </span>
                                                         </button>
-                                                    </li>
-
-
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>';
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>';
+                                        $i++; // Incrementa el contador en cada iteración
                                     }
-
-                                    echo "</tbody>
-                                    </table>";
+                                    echo "</tbody></table>";
 
                                     // Libera los resultados
                                     $resultado->free();
@@ -330,7 +324,7 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
                     </div>
                 </div>
             </div>
-            
+
 
             <!-- Delete User Modal -->
             <div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal sm:h-full" id="delete-user-modal">
@@ -351,10 +345,9 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                             <h3 class="mt-5 mb-6 text-lg text-neutral-800 dark:text-gray-400">¿Desea eliminar el cliente?</h3>
-                            <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
+                            <form action="funciones.php" method="POST">
                                 <input type="hidden" id="delete-client-id" name="delete-client-id" value="">
+
                                 <button type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-800">
                                     Segurísimo
                                 </button>
@@ -388,19 +381,15 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
                     },
                 });
             </script>
-            <script type="text/javascript">
-                document.addEventListener("DOMContentLoaded", function() {
-                    const deleteButtons = document.querySelectorAll("[data-modal-toggle='delete-user-modal']");
-                    const deleteForm = document.getElementById("delete-user-form");
-                    const deleteClientId = document.getElementById("delete-client-id");
+            <script>
+                // Asegúrate de que este script esté dentro de una etiqueta <script> en tu archivo HTML o en un archivo JavaScript externo.
+                document.addEventListener('DOMContentLoaded', function() {
+                    var deleteButtons = document.querySelectorAll('.delete-button');
 
-                    deleteButtons.forEach((button) => {
-                        button.addEventListener("click", function(event) {
-                            event.preventDefault();
-                            const clientId = this.getAttribute("data-cliente-id");
-                            deleteClientId.value = clientId;
-
-                            // Código para mostrar el modal aquí (puedes agregar tu lógica para mostrar el modal)
+                    deleteButtons.forEach(function(button) {
+                        button.addEventListener('click', function() {
+                            var clientId = button.getAttribute('data-client-id');
+                            document.getElementById('delete-client-id').value = clientId;
                         });
                     });
                 });
@@ -425,6 +414,19 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script>
+        // Espera a que el DOM esté completamente cargado
+        document.addEventListener("DOMContentLoaded", function() {
+            // Muestra la alerta si existe
+            const alert = document.getElementById('alert');
+            if (alert) {
+                alert.style.opacity = 1;
+                setTimeout(function() {
+                    alert.style.opacity = 0;
+                }, 5000); // Oculta la alerta después de 5 segundos
+            }
+        });
+    </script>
 </body>
 
 </html>

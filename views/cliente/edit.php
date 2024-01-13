@@ -1,3 +1,31 @@
+<?php
+require_once '../../src/php/connect.php';
+require_once 'funciones.php';
+
+// Verifica si se proporciona un ID en la URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    session_start();
+
+    // Aquí deberías cargar los datos del registro con el ID proporcionado y mostrarlos en el formulario
+    // Puedes usar la clase de conexión y hacer una consulta a la base de datos
+    // Supongamos que tienes una función obtenerDatosPorId en tu clase de conexión
+
+    $datos = obtenerDatosPorId($id, $conexion);
+
+    // Verifica si se obtuvieron datos antes de usarlos
+    if (!$datos) {
+        echo "No se encontraron datos para el ID proporcionado.";
+        exit();
+    }
+
+    // Ahora puedes mostrar los datos en el formulario
+} else {
+    // Si no se proporciona un ID, puedes manejar el error o redirigir a otra página
+    header("Location: otra_pagina.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +35,7 @@
     <title>Ladco Steel | Industria Metalmecánica</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -24,7 +52,7 @@
     $nombreUsuario = $_SESSION['nombre'];
 
     ?>
-     <script src="../src/js/clima.js"></script>
+    <script src="../src/js/clima.js"></script>
     <nav class="fixed top-0 z-50 w-full bg-neutral-950 ">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
@@ -153,89 +181,104 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
         </div>
     </aside>
 
-    
+    <main>
+        <div class="mt-12 pt-12 sm:ml-64">
+        <div class="relative bg-white">
+        <!-- Modal header -->
+        <div class="flex items-start border-b shadow-lg justify-between p-5 dark:border-gray-700">
+            <h1
+                class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                <span
+                    class="underline underline-offset-3 decoration-8 decoration-amber-400 dark:decoration-blue-600">Crear cliente
+                    </span></h1>
+        </div>
+        <!-- Modal body -->
+        <div class="p-6 space-y-6">
+            <form action="funciones.php" method="POST">
+            <input type="hidden" name="accion" value="actualizar">
+            <input type="hidden" name="id" value="<?php echo $datos['id']; ?>">
 
+                <div class="grid grid-cols-6 gap-6">
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="nombre"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                        <input type="text" name="nombre" id="nombre"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Nombre del cliente" value="<?php echo $datos['nombre']; ?>" required>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="apellido"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido</label>
+                        <input type="text" name="apellido" id="apellido"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Apellido del cliente" value="<?php echo $datos['apellido']; ?>" required>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="telefono"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teléfono</label>
+                        <input type="number" name="teléfono" id="teléfono"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Número telefonico del cliente" value="<?php echo $datos['telefono']; ?>" required>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="empresa"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Empresa</label>
+                        <input type="text" name="empresa" id="empresa"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Empresa a la que pertenece el cliente" value="<?php echo $datos['empresa']; ?>" required>
+                    </div>
+                    <div class="col-span-6 sm:col-span-6">
+                        <label for="correo"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo</label>
+                        <input type="mail" name="correo" id="correo"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Correo electrónico del cliente" value="<?php echo $datos['correo']; ?>" required>
+                    </div>
 
+                </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-700">
+            <a href="index.php" class="text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-slate-800 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm rounded-lg px-5 py-2.5 text-center inline-flex items-center mr-2"> 
+                <svg fill="currentColor" class="w-6 h-6 mr-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 301.153 301.153"
+                xml:space="preserve">
+           <g>
+               <path d="M257.098,44.055c-58.738-58.736-154.311-58.742-213.047,0c-58.733,58.738-58.727,154.319,0,213.047
+                   c58.742,58.739,154.314,58.733,213.047,0C315.831,198.362,315.837,102.793,257.098,44.055z M148.952,189.476
+                   c-2.402,2.402-6.29,2.402-8.695,0l-50.008-50.005c-1.186-1.198-1.79-2.771-1.801-4.348c0-1.573,0.604-3.146,1.801-4.348
+                   c2.405-2.401,6.29-2.401,8.695,0l45.648,45.657l66.305-66.299c2.414-2.411,6.3-2.401,8.707,0c2.402,2.405,2.402,6.29,0,8.695
+                   L148.952,189.476z"/>
+           </g>
+           </svg> Cancelar</a>
+            
+            <button type="submit" class="text-white bg-green-400 hover:bg-green-500 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm rounded-lg px-5 py-2.5 text-center inline-flex items-center mr-2">
+            
+            <svg fill="currentColor" class="w-6 h-6 mr-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 301.153 301.153"
+                xml:space="preserve">
+           <g>
+               <path d="M257.098,44.055c-58.738-58.736-154.311-58.742-213.047,0c-58.733,58.738-58.727,154.319,0,213.047
+                   c58.742,58.739,154.314,58.733,213.047,0C315.831,198.362,315.837,102.793,257.098,44.055z M148.952,189.476
+                   c-2.402,2.402-6.29,2.402-8.695,0l-50.008-50.005c-1.186-1.198-1.79-2.771-1.801-4.348c0-1.573,0.604-3.146,1.801-4.348
+                   c2.405-2.401,6.29-2.401,8.695,0l45.648,45.657l66.305-66.299c2.414-2.411,6.3-2.401,8.707,0c2.402,2.405,2.402,6.29,0,8.695
+                   L148.952,189.476z"/>
+           </g>
+           </svg> 
+            Guardar
+          </button>
+                
+        </div>
+        </form>
+    </div>
+        </div>
+    </main>
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-   
-    <script type="text/javascript">
-        var frasesInspiradoras = [
-            "La perseverancia es la clave del éxito. 🚀",
-            "El único modo de hacer un gran trabajo es amar lo que haces. ❤️",
-            "La vida es lo que pasa mientras estás ocupado haciendo otros planes. 🌍",
-            "El éxito es 99% fracaso. 💪",
-            "Cree que puedes y estás a medio camino. 🌟",
-            "La única manera de hacer un gran trabajo es amar lo que haces. 💼",
-            "Nunca te rindas. Grandes cosas llevan tiempo. ⏳",
-            "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. Si amas lo que haces, tendrás éxito. 😊",
-            "La oportunidad puede encontrar a aquellos que están listos. 🚪",
-            "El único lugar donde el éxito viene antes que el trabajo es en el diccionario. 📖",
-            "La única limitación es la que te pones a ti mismo. 🚫",
-            "Haz hoy lo que otros no quieren, haz mañana lo que otros no pueden. 🌅",
-            "Cada logro comienza con la decisión de intentarlo. 👣",
-            "El único modo de hacer un gran trabajo es amar lo que haces. 💖",
-            "No importa lo lento que vayas, siempre y cuando no te detengas. 🏃‍♂️",
-            "La vida es 10% lo que nos pasa y 90% cómo reaccionamos ante ello. 🤔",
-            "El éxito es la suma de pequeños esfuerzos repetidos día tras día. 🌟",
-            "La magia está en ti. ✨",
-            "No busques el éxito. Busca ser valioso y el éxito vendrá naturalmente. 🌱",
-            "La disciplina es el puente entre metas y logros. 🌉"
-        ];
 
 
-        function obtenerFraseAleatoria() {
-            var indiceAleatorio = Math.floor(Math.random() * frasesInspiradoras.length);
-            return frasesInspiradoras[indiceAleatorio];
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var fraseMostrada = document.getElementById("fraseMostrada");
-            fraseMostrada.textContent = obtenerFraseAleatoria();
-        });
-
-        var preguntas = [
-            "¿Cuál es tu mayor logro hasta ahora? 🏆",
-            "¿Qué aprendizaje importante obtuviste hoy? 🧠",
-            "¿En qué aspecto puedes mejorar? 💪",
-            "¿Cuál es tu mayor miedo y cómo puedes superarlo? 😨",
-            "¿Qué consejo te darías a ti mismo/a hace 5 años? 🕰️",
-            "¿Cuál es tu objetivo más importante a corto plazo? 🥇",
-            "¿Cómo defines el éxito? 🌟",
-            "¿Qué actividades te dan más energía y cuáles te la quitan? ⚡",
-            "¿Cuál es tu mayor fortaleza personal? 💪",
-            "¿En qué situación te has sentido más orgulloso/a de ti mismo/a? 😊",
-            "¿Qué hábito te gustaría desarrollar para mejorar tu vida? 🔄",
-            "¿Qué te inspira y motiva en la vida? 🚀",
-            "¿Cómo manejas el estrés y la presión? ⏳",
-            "¿Cuál es tu mayor sueño o aspiración? 💭",
-            "¿Cómo te visualizas a ti mismo/a en el futuro? 🔮",
-            "¿Qué significa para ti vivir una vida significativa? ❤️",
-            "¿Qué cambios pequeños puedes hacer hoy para mejorar tu mañana? 🌅",
-            "¿Cuál es tu filosofía de vida? 🤔",
-            "¿Qué te hace sentir agradecido/a en este momento? 🙏",
-            "¿Qué lección importante has aprendido de un desafío reciente? 🚧",
-        ];
-
-
-        // Función para obtener una pregunta aleatoria
-        function obtenerPreguntaAleatoria() {
-            var indiceAleatorio = Math.floor(Math.random() * preguntas.length);
-            return preguntas[indiceAleatorio];
-        }
-
-        // Función para mostrar la pregunta en el contenedor
-        function mostrarPregunta() {
-            var preguntaContainer = document.getElementById("question-container");
-            preguntaContainer.textContent = obtenerPreguntaAleatoria();
-        }
-
-        // Llamada inicial para mostrar la primera pregunta al cargar la página
-        mostrarPregunta();
-    </script>
-    
 </body>
 
 </html>
