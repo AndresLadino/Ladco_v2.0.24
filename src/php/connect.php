@@ -23,6 +23,7 @@ class conexion
 
     public function proteger_text($text)
     {
+        
         $this->secured = strip_tags($text, "\xc2\xa0");
         $this->secured = htmlspecialchars(trim(stripslashes($text)), ENT_QUOTES, "UTF-8");
 

@@ -24,7 +24,6 @@
     $nombreUsuario = $_SESSION['nombre'];
 
     ?>
-    <script src="../src/js/clima.js"></script>
     <nav class="fixed top-0 z-50 w-full bg-neutral-950 ">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
