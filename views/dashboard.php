@@ -78,7 +78,7 @@ m-22 -116 c-9 -9 -15 -9 -24 0 -9 9 -7 12 12 12 19 0 21 -3 12 -12z" />
                             </div>
                             <ul class="py-1" role="none">
                                 <li>
-                                    <a href="/dashboard" class="block px-4 py-2 text-sm text-slate-100 hover:bg-slate-800 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Inicio</a>
+                                    <a href="dashboard.php" class="block px-4 py-2 text-sm text-slate-100 hover:bg-slate-800 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Inicio</a>
                                 </li>
                                 <!--<li>
                                     <a href="/modificarDatos/{{ auth()->user()->id }}/edit"
