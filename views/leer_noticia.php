@@ -28,6 +28,13 @@ if (isset($_GET['titulo'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ladco Steel | Industria Metalmecánica</title>
+    <link rel="shortcut icon" href="../src/image/logoPagina.webp" />
+    <meta name="description"
+        content="Descubre la excelencia en mobiliario metálico con Ladco Steel. Diseño duradero y elegante para transformar tu espacio. ¡Explora ahora!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="mobiliario metálico, muebles de acero, diseño industrial, mobiliario resistente, muebles modernos, muebles comerciales, mobiliario duradero, acabados en acero, diseño contemporáneo, muebles de calidad, mesas de acero, sillas metálicas, estanterías de metal, escritorios industriales, gabinetes de acero, decoración en metal, muebles para oficinas, mobiliario para tiendas, muebles para espacios comerciales, diseño exclusivo, fabricación de acero, personalización de muebles, estilos modernos, tendencias en mobiliario, muebles robustos, sofisticación en acero, mobiliario versátil, elegancia industrial, mesas de conferencia de acero, mobiliario de almacenamiento, mobiliario contemporáneo, diseño minimalista, calidad y durabilidad, estilo único en acero, sillas para restaurantes, mobiliario para hostelería, decoración industrial, mesas auxiliares de metal, mobiliario de exterior, mobiliario para salas de espera, mesas de centro de acero, diseño de interiores con acero, estilos vanguardistas, mobiliario personalizado, tendencias en decoración, calidad artesanal, diseño funcional en acero">
+    <meta name="robots" content="index, follow">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
