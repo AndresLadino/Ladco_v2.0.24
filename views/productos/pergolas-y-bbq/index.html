@@ -41,7 +41,7 @@
                                 d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
-                    <a href="login.html">
+                  <!-- <a href="login.html">
                         <button type="button"
                             class="inline-flex items-center font-medium justify-center px-4 py-2 text-lg text-amber-300 rounded-lg cursor-pointer hover:bg-neutral-600">
                             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor"
@@ -54,7 +54,7 @@
                             </svg>
 
                         </button>
-                    </a>
+                    </a>-->
                 </div>
 
                 <div class="items-center justify-between md:bg-transparent hidden w-full md:flex md:w-auto md:order-1"
@@ -91,81 +91,67 @@
 
         </section>
         <div class="relative -mt-20 mb-5 flex justify-center">
-            <div class="w-3/4 bg-white shadow-lg rounded-lg z-10">
-                <div class="flex">
+            <div class="w-full md:w-3/4 bg-white shadow-lg rounded-lg z-10">
+                <div class="flex flex-col md:flex-row">
                     <!-- Contenedor principal -->
-                    <div class="w-5/5 p-12">
-                        <h1 class="text-5xl font-bold mb-4 mx-20 text-amber-500">Pérgolas y BBQ</h1>
-                        <p class="mt-20 mb-4 mx-20 text-xl">
+                    <div class="w-full p-4 md:p-12">
+                        <h1 class="text-3xl md:text-5xl font-bold mb-4 md:text-left text-amber-500">Pérgolas y BBQ</h1>
+                        <p class="mt-4 md:mt-8 mb-4 text-lg md:text-xl md:text-left">
                             Diseñamos y fabricamos pérgolas tanto exteriores como interiores, con un enfoque en la
                             funcionalidad y el diseño arquitectónico. Nuestras pérgolas son ideales para crear espacios
                             sombreados y protegidos, perfectos para disfrutar del aire libre.
                         </p>
-
+        
                         <figure class="cd-image-container mt-8">
-                            <img src="../img/pergolasDespues.jpg" alt="Original Image">
-                            <span class="cd-image-label bg-neutral-900 bg-opacity-60"
-                                data-type="original">Después</span>
-
+                            <img src="../img/pergolasDespues.jpg" alt="Original Image" class="w-full">
+                            <span class="cd-image-label bg-neutral-900 bg-opacity-60" data-type="original">Después</span>
                             <div class="cd-resize-img">
-                                <img src="../img/pergolasAntes.jpg" alt="Modified Image">
-                                <span class="cd-image-label bg-neutral-900 bg-opacity-60"
-                                    data-type="modified">Antes</span>
+                                <img src="../img/pergolasAntes.jpg" alt="Modified Image" class="w-full">
+                                <span class="cd-image-label bg-neutral-900 bg-opacity-60" data-type="modified">Antes</span>
                             </div>
-
                             <span class="cd-handle"></span>
                         </figure>
-                        
-                        <p class="mb-4 mt-8 mx-20 text-xl">
+        
+                        <p class="mb-4 mt-8 text-lg md:text-xl text-center md:text-left">
                             Además, ofrecemos BBQs y planchas en acero inoxidable, fabricadas con materiales de la más
                             alta calidad. Cada pieza está diseñada para ser duradera y fácil de mantener, proporcionando
                             una solución elegante y funcional para sus áreas de entretenimiento al aire libre.
                         </p>
-
+        
                         <!-- Galería -->
-                        <p class=" mx-20 mt-12 text-amber-500 font-semibold">Echa un vistazo a algunos de nuestros
-                            proyectos
-                            realizados</p>
-                            <div class="max-w-screen-2xl mt-12 mx-20 relative">
-                                <div class="flex flex-col md:flex-row gap-2">
-                                    <div class="flex flex-1 flex-col gap-2">
-                                        
-                                        <div class="hidden md:flex flex-1 flex-row gap-2">
-                                            <div class="flex flex-1 flex-col">
-                                                <!-- img_02 -->
-                                                <img class="object-cover h-full"
-                                                    src="https://i.postimg.cc/3wk71xxk/pergola1.jpg">
-                                            </div>
-                                            <div class="hidden md:flex flex-1 flex-col">
-                                                <!-- img_03 -->
-                                                <img class="object-cover h-full"
-                                                    src="https://i.postimg.cc/xdBQ4VXt/pergola2.jpg">
-                                            </div>
+                        <p class="mt-8 md:mt-12 text-amber-500 font-semibold text-center md:text-left">Echa un vistazo a algunos de nuestros proyectos realizados</p>
+                        <div class="max-w-screen-2xl mt-8 md:mt-12 mx-auto md:mx-20 relative">
+                            <div class="flex flex-col md:flex-row gap-2">
+                                <div class="flex flex-1 flex-col gap-2">
+                                    <div class="flex flex-1 flex-col md:flex-row gap-2">
+                                        <div class="flex flex-1">
+                                            <img class="object-cover w-full h-full" src="https://i.postimg.cc/3wk71xxk/pergola1.jpg" alt="Pergola 1">
                                         </div>
-                                    </div>                                
+                                        <div class="hidden md:flex flex-1">
+                                            <img class="object-cover w-full h-full" src="https://i.postimg.cc/xdBQ4VXt/pergola2.jpg" alt="Pergola 2">
+                                        </div>
+                                    </div>
                                 </div>
-                                
                             </div>
-                        
-
-
+                        </div>
                     </div>
                 </div>
-
+        
                 <!--Descubrir -->
-                <div class="w-full bg-neutral-900 p-6 mt-8 flex rounded-b-lg flex-col items-center">
-                    <p class="mb-4 mt-3 text-lg text-white font-bold">Explore más de nuestros productos o descargue
-                        nuestro brochure</p>
+                <div class="w-full bg-neutral-900 p-4 md:p-6 mt-8 flex flex-col items-center rounded-b-lg">
+                    <p class="mb-4 mt-3 text-lg text-white font-bold text-center">Explore más de nuestros productos o descargue nuestro brochure</p>
                     <div class="flex justify-center space-x-2">
-                        <a href="../../../index.html#productos" class="text-amber-500 font-semibold mb-4"><button
-                                class="bg-amber-500 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-amber-700 transition duration-300">Explorar</button></a>
-                        <a href="../brochure_LadcoSteel_2024.pdf" download="brochure_LadcoSteel_2024.pdf"><button
-                                class="bg-white text-black px-6 py-2 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300">Descargar</button></a>
+                        <a href="../../../index.html#productos" class="text-amber-500 font-semibold mb-4">
+                            <button class="bg-amber-500 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-amber-700 transition duration-300">Explorar</button>
+                        </a>
+                        <a href="../brochure_LadcoSteel_2024.pdf" download="brochure_LadcoSteel_2024.pdf">
+                            <button class="bg-white text-black px-6 py-2 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300">Descargar</button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
+        
 
     </main>
     <button id="to-top-button" onclick="goToTop()" title="Go To Top"
