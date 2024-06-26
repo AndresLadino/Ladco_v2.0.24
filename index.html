@@ -403,22 +403,29 @@
 
             <div class="grid grid-cols-1 w-12/12 md:grid-cols-3 gap-4 mt-12 md:w-9/12 mx-auto">
                 <!--Pergolas-->
-                <div
-                    class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg">
+                <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow rounded-lg">
                     <img class="h-auto max-w-full rounded-lg object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                        src="src/image/productos/pergolas.jpg" alt="Pérgola metálica, BBQ">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
-                    </div>
-                    <div
-                        class="absolute inset-0 flex translate-y-[85%] flex-col items-center justify-center px-10 text-center transition-all duration-500 group-hover:translate-y-0">
+                         src="src/image/productos/pergolas.jpg" alt="Pérgola metálica, BBQ">
+                    <!-- Fondo con gradiente para desktop (hover) -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 hidden md:block group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                    <!-- Contenido siempre visible en móvil -->
+                    <div class="absolute inset-0 flex translate-y-[85%] flex-col items-center justify-center px-10 text-center md:hidden">
                         <h1 class="font-dmserif text-2xl md:text-2xl lg:text-4xl font-bold text-white">Pérgolas y BBQ</h1>
-                        
+                                        
                         <a href="views/productos/pergolas-y-bbq/" class="mt-12"><button
-                                class=" bg-amber-500 px-3.5 py-2 text-sm text-white shadow shadow-black/60">Conocer
-                                más</button></a>
+                           class=" bg-amber-500 px-3.5 py-2 text-sm text-white shadow shadow-black/60">Conocer
+                           más</button></a>
+                    </div>
+                    <!-- Contenido para desktop (hover) -->
+                    <div class="absolute inset-0 flex translate-y-[85%] flex-col items-center justify-center px-10 text-center hidden md:flex transition-all duration-500 group-hover:translate-y-0">
+                        <h1 class="font-dmserif text-2xl md:text-2xl lg:text-4xl font-bold text-white">Pérgolas y BBQ</h1>
+                                        
+                        <a href="views/productos/pergolas-y-bbq/" class="mt-12"><button
+                           class=" bg-amber-500 px-3.5 py-2 text-sm text-white shadow shadow-black/60">Conocer
+                           más</button></a>
                     </div>
                 </div>
+                
                 <!--Materas-->
                 <div
                     class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg">
