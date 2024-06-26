@@ -79,7 +79,7 @@
 	list-style: none;
 	width: 20px;
 	height: 20px;
-	background-color: rgb(252 211 77);
+	background-color: #fcd34d;
 	animation: animate 25s linear infinite;
 	bottom: -150px;
 }
